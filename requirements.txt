@@ -11,3 +11,4 @@ pypdf
 python-pptx
 bcrypt
 python-docx
+//install manually or use requirements.txt file quick install
