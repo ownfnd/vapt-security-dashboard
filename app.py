@@ -106,7 +106,17 @@ if page == "Team Management":
             session.commit()
             st.success(f"Team '{team_name}' Created!")
             st.rerun()
-
+  # # 1. Create Team
+  #   st.subheader("Create New Group/Team")
+  #   with st.form("create_team"):
+  #       team_name = st.text_input("Team Name")
+  #       submitted = st.form_submit_button("Create Team")
+  #       if submitted and team_name:
+  #           new_team = Team(name=team_name, manager_id=user_id)
+  #           session.add(new_team)
+  #           session.commit()
+  #           st.success(f"Team '{team_name}' Created!")
+  #           st.rerun()
     # 2. Assign Members
     st.subheader("Assign Employees to Team")
     teams = session.query(Team).filter_by(manager_id=user_id).all() if user_role == "Manager" else session.query(Team).all()
@@ -305,3 +315,4 @@ elif page == "Dashboard":
 
     else:
         st.info("Upload a file to begin VAPT Analysis.")
+
